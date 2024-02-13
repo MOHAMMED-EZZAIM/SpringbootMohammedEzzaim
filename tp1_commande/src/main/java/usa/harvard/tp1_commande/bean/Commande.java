@@ -22,5 +22,6 @@ public class Commande {
     private double montantPayeEspece;
     @OneToMany @Lazy
     private List<Paiement> paiements;
+    private String mohammed;
 
 }
