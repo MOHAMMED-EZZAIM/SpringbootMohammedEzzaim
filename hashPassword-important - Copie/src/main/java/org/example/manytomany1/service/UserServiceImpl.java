@@ -4,9 +4,9 @@ import org.example.manytomany1.bean.UserEz;
 import org.example.manytomany1.dao.RoleDao;
 import org.example.manytomany1.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import java.util.ArrayList;
 import java.util.UUID;
 @Service
@@ -20,6 +20,7 @@ public class UserServiceImpl implements UserService{
     private  RoleDao roleDao;
     @Override
     public UserEz addNewUserWithHash(UserEz userEz) {
+//        userEz.setId_UDDI(UUID.randomUUID().toString());
         userEz.setId_UDDI(UUID.randomUUID().toString().substring(0,8));
         // hacher le password et envoyer a la base donne
         // Hacher le mot de passe avec BCrypt
@@ -91,6 +92,12 @@ public UserEz authenticateWithHash(String username, String password) {
     public UserEz authenticateSansHash(String username, String password) {
         return null;
     }
+
+
+
+
+
+
 
 //    @Override
 //    public UserEz authenticateSansHash(String username, String password) {

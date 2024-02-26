@@ -45,8 +45,8 @@ public class Manytomany1Application implements CommandLineRunner{
 
         try {
             UserEz againConsulter=userService.authenticateWithHash("admin","123456");
-            System.out.println(againConsulter.getUserId());
-            System.out.println(againConsulter.getUsername());
+//            System.out.println(againConsulter.getUserId());
+//            System.out.println(againConsulter.getUsername());
             againConsulter.getRoleEzs().forEach(r->{
                 System.out.println("Role=>"+r.toString());
             });

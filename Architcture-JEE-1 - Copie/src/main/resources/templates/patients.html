@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar avec Barre de Recherche</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #1486e3;
+            padding: 4px 0;
+            border-radius: 2px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            margin: 0px;
+            display: inline-block; /* Utiliser display inline-block pour garder les éléments sur une ligne */
+        }
+        nav ul li a {
+            margin: 0;
+            display: block; /* Changer display en block pour occuper toute la largeur */
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color:  #2782cd;
+        }
+        nav ul li.search-box {
+            margin-left: auto; /* Pour aligner la barre de recherche à droite */
+        }
+        nav ul li.search-box input[type="text"] {
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            background-color: #ffffff;
+            color: #0a8bf5; /* Changer la couleur du texte à #0a8bf5 */
+            margin-right: 10px; /* Ajouter une marge à droite */
+            width: 150px; /* Ajuster la largeur du champ de recherche pour les appareils mobiles */
+        }
+        nav ul li.search-box button {
+            padding: 10px 20px;
+            background-color: #0a8bf5;
+            border: none;
+            color: #fff;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li.search-box button:hover {
+            background-color:  #ffffff;
+            color: #0a8bf5;
+        }
+
+        nav ul li.search-box button:active {
+            background-color:  #0a8bf5;
+            color: #fff;
+        }
+        /* Media query pour les appareils ayant une largeur maximale de 600 pixels (téléphones) */
+        @media only screen and (max-width: 600px) {
+            nav ul li {
+                display: block; /* Changer display en block pour empiler les éléments sur les téléphones */
+                margin-bottom: 10px; /* Ajouter de l'espace entre chaque élément */
+            }
+
+            nav ul li.search-box {
+                margin-left: 0; /* Supprimer la marge pour la barre de recherche sur les téléphones */
+                text-align: center; /* Centrer la barre de recherche sur les téléphones */
+            }
+
+            nav ul li.search-box input[type="text"] {
+                width: 100%; /* Ajuster la largeur du champ de recherche pour remplir la largeur disponible */
+                margin-right: 0; /* Supprimer la marge à droite pour le champ de recherche sur les téléphones */
+            }
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#">À propos</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+        <li class="search-box"><input type="text" placeholder="Rechercher..."><button type="submit">Rechercher</button></li>
+    </ul>
+</nav>
+</body>
+</html>
