@@ -7,9 +7,8 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorColumn(name = "Type",length = 4)
 public abstract class Personne {
-    @Id
+    @Id  @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nom;
     private String dateNaissance;

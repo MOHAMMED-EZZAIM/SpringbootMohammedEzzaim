@@ -17,29 +17,29 @@ public class ArchitctureJee1Application {
 
     }
 
-//    @Bean
-//     CommandLineRunner commandLineRunner(PatientDao patientDao){
-//        return args -> {
-//            patientDao.save(
-//                    new Patinet(null,"mohammed",new Date(),false,20000)
-//            );
-//            patientDao.save(
-//                    new Patinet(null,"hassane",new Date(),true,332)
-//            );
-//            patientDao.save(
-//                    new Patinet(null,"ismail",new Date(),false,13000)
-//            );
-//            patientDao.save(
-//                    new Patinet(null,"abd2ilahh",new Date(),false,13000)
-//            );
-//            patientDao.findAll().forEach(p->{
-//                System.out.println("----------------------------------");
-//                System.out.println(p.getId());
-//                System.out.println(p.getNom());
-//                System.out.println(p.getDateNassance());
-//                System.out.println(p.getNom()+" est malade:"+p.isMalade());
-//                System.out.println(p.getScore());
-//            });
-//        };
-//    }
+    @Bean
+     CommandLineRunner commandLineRunner(PatientDao patientDao){
+        return args -> {
+            patientDao.save(
+                    new Patinet(null,"mohammed",new Date(),false,20000)
+            );
+            patientDao.save(
+                    new Patinet(null,"hassane",new Date(),true,332)
+            );
+            patientDao.save(
+                    new Patinet(null,"ismail",new Date(),false,13000)
+            );
+            patientDao.save(
+                    new Patinet(null,"abd2ilahh",new Date(),false,13000)
+            );
+            patientDao.findAll().forEach(p->{
+                System.out.println("----------------------------------");
+                System.out.println(p.getId());
+                System.out.println(p.getNom());
+                System.out.println(p.getDateNassance());
+                System.out.println(p.getNom()+" est malade:"+p.isMalade());
+                System.out.println(p.getScore());
+            });
+        };
+    }
 }

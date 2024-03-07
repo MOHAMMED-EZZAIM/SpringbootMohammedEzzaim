@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import usa.harvard.sigle_table.bean.Chemkr;
 import usa.harvard.sigle_table.bean.Enseignat;
 import usa.harvard.sigle_table.bean.Etudaint;
 import usa.harvard.sigle_table.dao.Personnerepository;
@@ -30,8 +31,15 @@ public class SigleTableApplication implements CommandLineRunner {
         enseignat.setDateNaissance("18/6/2003");
         enseignat.setMatier("Programmation java");
         enseignat.setId(2L);
-
         personnerepository.save(enseignat);
+
+
+        Chemkr chemkr=new Chemkr();
+        chemkr.setNom("chemkar lahh yehdire");
+        chemkr.setDateNaissance("18/6/2000");
+        chemkr.setL39el(false);
+        chemkr.setId(3L);
+        personnerepository.save(chemkr);
 
     }
 }

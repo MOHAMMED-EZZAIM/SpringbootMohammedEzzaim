@@ -1,8 +1,13 @@
 package com.example.commande.bean;
 
 import jakarta.persistence.*;
+import jdk.jfr.DataAmount;
+import lombok.Data;
+
+import java.util.List;
 
 @Entity
+@Data
 public class Commande {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,52 +19,7 @@ public class Commande {
     double montantPayeCheque;
     double montantPayeEspece;
 
-    public double getMontantPayeCheque() {
-        return montantPayeCheque;
-    }
-
-    public void setMontantPayeCheque(double montantPayeCheque) {
-        this.montantPayeCheque = montantPayeCheque;
-    }
-
-    public double getMontantPayeEspece() {
-        return montantPayeEspece;
-    }
-
-    public void setMontantPayeEspece(double montantPayeEspece) {
-        this.montantPayeEspece = montantPayeEspece;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getRef() {
-        return ref;
-    }
-
-    public void setRef(String ref) {
-        this.ref = ref;
-    }
-
-    public double getTotal() {
-        return total;
-    }
-
-    public void setTotal(double total) {
-        this.total = total;
-    }
-
-    public double getTotalPay() {
-        return totalPay;
-    }
-
-    public void setTotalPay(double totalPay) {
-        this.totalPay = totalPay;
-    }
+    @OneToMany
+    private List<Paiement> paiement;
 }
 

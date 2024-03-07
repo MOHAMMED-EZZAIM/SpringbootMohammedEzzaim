@@ -12,8 +12,6 @@ public interface PaiementDao extends JpaRepository<Paiement, Long> {
     Paiement findByCode(String code);
 
     int deleteByCode(String code);
-
-    //ref(commande) ====== delete paiement :: PaiementDao
     int deleteByCommandeRef(String ref);
 
     List<Paiement> findByCommandeRef(String ref);

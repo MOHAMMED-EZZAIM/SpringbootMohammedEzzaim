@@ -9,7 +9,6 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@DiscriminatorValue("PROF")
 public class Enseignat extends Personne {
     private String matier;
 }

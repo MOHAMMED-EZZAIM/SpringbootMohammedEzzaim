@@ -8,7 +8,6 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@DiscriminatorValue("ETUD")
 public class Etudaint extends Personne {
     private double note;
 
